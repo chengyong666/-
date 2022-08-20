@@ -11,6 +11,7 @@
   "dependencies": {
     "@jiaminghi/data-view": "^2.10.0",
     "echarts": "^5.3.3",
+    "scss-flex": "^1.8.3",
     "vue": "^3.2.13",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.3",

@@ -4,7 +4,10 @@
       <div class="topTitle">
         <dv-decoration-8 class="leftTitle" />
         <dv-decoration-11 class="titleName"
-          >数据可视化数据展示平台</dv-decoration-11
+          >个人求职信息数据可视化展示平台
+          <a href="/resume.pdf" download="程雍个人简历.pdf"
+            ><span></span>PDF简历下载</a
+          ></dv-decoration-11
         >
         <dv-decoration-8 class="righttTitle" :reverse="true" />
       </div>
@@ -230,6 +233,15 @@ export default defineComponent({
       min-width: 100px;
       font-size: 30px;
       color: #fff;
+      a {
+        font-size: 16px;
+        color: #fff;
+        text-decoration: none;
+        margin-left: 15px;
+        &:hover {
+          color: pink;
+        }
+      }
     }
     .righttTitle {
       flex-shrink: 1;

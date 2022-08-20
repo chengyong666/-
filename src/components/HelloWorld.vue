@@ -102,7 +102,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" scoped>
 import { Options, Vue } from "vue-class-component";
 
 @Options({

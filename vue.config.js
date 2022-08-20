@@ -5,4 +5,5 @@ module.exports = defineConfig({
   indexPath: 'index.html',
   lintOnSave: false,
   transpileDependencies: true,
+
 })

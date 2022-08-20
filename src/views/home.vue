@@ -5,14 +5,15 @@
         <dv-decoration-8 class="leftTitle" />
         <dv-decoration-11 class="titleName"
           >个人求职信息数据可视化展示平台
-          <a href="/resume.pdf" download="程雍个人简历.pdf"
+          <a href="./resume.pdf" download="程雍个人简历.pdf"
             ><span></span>PDF简历下载</a
           ></dv-decoration-11
         >
         <dv-decoration-8 class="righttTitle" :reverse="true" />
       </div>
-      <div class="buttom_conent">
-        <div class="left">
+      <div class="row buttom_conent container-fluid">
+        <!-- <div class="row"> -->
+        <div class="left col-xs-12 col-lg-4">
           <dv-border-box-8 ref="left_1" class="left_1">
             <div class="left_1_content">
               <div class="left_1_top">
@@ -49,8 +50,10 @@
             ><project-list :config="config"></project-list
           ></dv-border-box-8>
         </div>
+
         <!-- —————————————————————————————————————— -->
-        <div class="middle">
+
+        <div class="middle col-xs-12 col-lg-4">
           <dv-border-box-8 class="middle_border" :reverse="true">
             <div class="neirong" flex="dir:top box:first">
               <div class="nvr">
@@ -74,8 +77,10 @@
             </div>
           </dv-border-box-8>
         </div>
+
         <!-- —————————————————————————————————————————————— -->
-        <div class="right">
+
+        <div ref="right_1" class="right col-xs-12 col-lg-4">
           <dv-border-box-8 class="right_content">
             <div class="right_content_">
               <div class="right_top">
@@ -91,27 +96,46 @@
               </div>
 
               <div class="right_bottom">
-                <dv-decoration-10 style="width: 100%; height: 5px" />
-                <h2 class="titles">个人评价</h2>
-                <div class="ziwopingjia">
-                  <div class="ping">1、能够尽快熟悉业务，能快速融入团队</div>
-                  <div class="ping">
-                    2、富有团队合作精神，做事勤勉，服从领导命令
-                  </div>
-                  <div class="ping">
-                    3、性格外向,喜欢唱歌也会喝酒，项目的气氛活跃者
+                <div class="xinziCoenbty1">
+                  <dv-decoration-10 style="width: 100%; height: 5px" />
+                  <h2 class="titles">个人评价</h2>
+                  <div class="ziwopingjia">
+                    <div class="ping">1、能够尽快熟悉业务，能快速融入团队</div>
+                    <div class="ping">
+                      2、富有团队合作精神，做事勤勉，服从领导命令
+                    </div>
+                    <div class="ping">
+                      3、性格外向,喜欢唱歌也会喝酒，项目的气氛活跃者
+                    </div>
                   </div>
                 </div>
-                <h2 class="qiwangxinzi">期望薪资:</h2>
-                <div class="xinzi">
-                  <dv-decoration-9 class="xinzia">16k</dv-decoration-9>
-                  <dv-decoration-10 style="width: 30px; height: 5px" />
-                  <dv-decoration-9 class="xinzia">17k</dv-decoration-9>
+                <div class="xinziCoenbty">
+                  <h2 class="qiwangxinzi">期望薪资:</h2>
+                  <div class="xinzi">
+                    <dv-decoration-9
+                      :style="{
+                        height: contwidth + 'px',
+                        width: contwidth + 'px',
+                      }"
+                      class="disablePxToRem-xinzia"
+                      >16k</dv-decoration-9
+                    >
+                    <dv-decoration-10 class="lines" />
+                    <dv-decoration-9
+                      :style="{
+                        height: contwidth + 'px',
+                        width: contwidth + 'px',
+                      }"
+                      class="disablePxToRem-xinzia"
+                      >17k</dv-decoration-9
+                    >
+                  </div>
                 </div>
               </div>
             </div>
           </dv-border-box-8>
         </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>
@@ -141,8 +165,10 @@ export default defineComponent({
   setup() {
     const data = reactive({
       contHeight: 0,
+      contwidth: 0,
     });
     const left_1: any = ref(null);
+    const right_1: any = ref(null);
     const config = ref({
       data: [
         {
@@ -186,15 +212,21 @@ export default defineComponent({
       headerBGC: "#1981f6",
       headerHeight: 10,
     });
-
+    function resizeTheChart() {
+      data.contwidth = left_1.value.$el.clientWidth / 3;
+      console.log(data.contwidth);
+    }
     onMounted(() => {
       // 当界面挂载出来后就会自动执行
       data.contHeight = left_1.value.$el.clientHeight;
-      console.log(left_1.value.$el.clientHeight);
+      data.contwidth = left_1.value.$el.clientWidth / 3;
+      console.log(left_1.value.$el.clientWidth);
+      window.addEventListener("resize", resizeTheChart);
     });
     return {
       config,
       left_1,
+      right_1,
       ...toRefs(data),
     };
   },
@@ -213,6 +245,8 @@ export default defineComponent({
   height: 100%;
   width: 100%;
   flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
   .topTitle {
     display: flex;
     flex-direction: row;
@@ -250,15 +284,19 @@ export default defineComponent({
     }
   }
   .buttom_conent {
-    display: flex;
+    // display: flex;
     flex: 1;
     height: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
-    justify-content: center;
+    // justify-content: center;
+    .row {
+      width: 100%;
+      height: 100%;
+    }
     .left {
-      width: 31%;
-      margin-right: 1%;
+      // width: 31%;
+      // margin-right: 1%;
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -311,9 +349,9 @@ export default defineComponent({
       }
     }
     .middle {
-      width: 31%;
+      // width: 31%;
       height: 100%;
-      margin-right: 1%;
+      // margin-right: 1%;
       overflow: hidden;
       .middle_border {
         width: 100%;
@@ -363,7 +401,7 @@ export default defineComponent({
       }
     }
     .right {
-      width: 31%;
+      // width: 31%;s
       height: 100%;
       .right_content {
         width: 100%;
@@ -404,10 +442,20 @@ export default defineComponent({
       .right_bottom {
         width: 100%;
         flex: 1;
+        flex-direction: column;
         padding: 10px;
-
+        display: flex;
+        .xinziCoenbty {
+          flex: 1;
+          height: 100%;
+        }
+        .xinziCoenbty1 {
+          flex: 1;
+          height: 100%;
+        }
         .titles {
           color: rgb(190, 33, 218);
+          margin-top: 30px;
         }
         .ziwopingjia {
           .ping {
@@ -416,6 +464,7 @@ export default defineComponent({
           }
         }
         .qiwangxinzi {
+          margin-top: 28px;
           color: rgb(45, 191, 164);
         }
         .xinzi {
@@ -423,9 +472,18 @@ export default defineComponent({
           justify-content: center;
           align-items: center;
           margin-top: 20px;
-          .xinzia {
+          width: 80%;
+          margin: 0 auto;
+
+          .lines {
+            flex-shrink: 1;
+            width: 100%;
+            height: 1px;
+          }
+          .disablePxToRem-xinzia {
             width: 150px;
             height: 150px;
+            flex-shrink: 0;
             font-size: 17px;
             color: #fff;
           }

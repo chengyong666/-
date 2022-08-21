@@ -1,15 +1,15 @@
 <template>
   <div class="dianyin_s">
     <div class="line">
-      <div class="title">
+      <div class="disablePxToRem-title">
         零研官网（腾信公司开发）<span class="link_s" @click="open_link"
           >Look Look</span
         >
       </div>
-      <div class="jishu">
+      <div class="disablePxToRem-jishu">
         使用技术：vue3.0 全家桶+TS+字节跳动开源框架 ArcoDesign
       </div>
-      <div class="content">
+      <div class="disablePxToRem-content">
         项目描述：这是一个公司的官网通过 vue3.0 技术实现的，使用字节跳动开源的
         ArcoDesign 框架基于的 vite
         框架。官网的功能有登录功能/找回密码/注册功能/信息展示/PC
@@ -20,9 +20,9 @@
       </div>
     </div>
     <div class="line">
-      <div class="title">微笑健康小程序（腾信公司开发）</div>
-      <div class="jishu">使用技术：Uni-app+Uview2.0</div>
-      <div class="content">
+      <div class="disablePxToRem-title">微笑健康小程序（腾信公司开发）</div>
+      <div class="disablePxToRem-jishu">使用技术：Uni-app+Uview2.0</div>
+      <div class="disablePxToRem-content">
         项目描述：该项目是把关于医疗的数据信息类别基于一身，并把运动软件的功能也归类在了一起。实现健
         康搜搜功能来准确搜寻比较好的医院。身体出现症状查找病因，咨询对于医疗健康的困惑作为更有效的准
         备与解答。搜搜功能保留了搜索历史，语音搜搜等。并且邀请好友功能赚取积分，在自己运动减肥时，随
@@ -31,13 +31,13 @@
       </div>
     </div>
     <div class="line">
-      <div class="title">
+      <div class="disablePxToRem-title">
         MISE
         系统后台管理权限（营口巨成教学科技开发有限公司石家庄分公司开发）项目 0
         到 1 独立开发
       </div>
-      <div class="jishu">使用技术：vue2.0 全家桶</div>
-      <div class="content">
+      <div class="disablePxToRem-jishu">使用技术：vue2.0 全家桶</div>
+      <div class="disablePxToRem-content">
         项目描述： MISE
         系统关联着多个其他的后台管理系统，有一个用户管理系统,一个心肺管理系统。
         通过硬件模型模拟人设
@@ -52,12 +52,12 @@
       </div>
     </div>
     <div class="line">
-      <div class="title">
+      <div class="disablePxToRem-title">
         心肺管理系统（营口巨成教学科技开发有限公司石家庄分公司开发）项目 0 到 1
         独立开发
       </div>
-      <div class="jishu">使用技术：vue2.0 全家桶</div>
-      <div class="content">
+      <div class="disablePxToRem-jishu">使用技术：vue2.0 全家桶</div>
+      <div class="disablePxToRem-content">
         项目描述：
         项目以练习题为主，通过创建单选、多选功能并添加音频文件实现创建考题。并可以随
         机组卷、手动组卷多种
@@ -72,17 +72,19 @@
       </div>
     </div>
     <div class="line">
-      <div class="title">天衍官网（腾信公司开发）</div>
-      <div class="jishu">使用技术：React</div>
-      <div class="content">
+      <div class="disablePxToRem-title">天衍官网（腾信公司开发）</div>
+      <div class="disablePxToRem-jishu">使用技术：React</div>
+      <div class="disablePxToRem-content">
         项目描述：一个简单的项目展示功能，只是在关于我们里有一个表单提交功能需要与后台实现交互。
         写这个项目呢只是为了证明会 react 只是没有进行 React 的复杂项目
       </div>
     </div>
     <div class="line">
-      <div class="title">物联消费小程序（莱峰物联网开发）</div>
-      <div class="jishu">使用技术：原生微信小程序+小程序开发文档</div>
-      <div class="content">
+      <div class="disablePxToRem-title">物联消费小程序（莱峰物联网开发）</div>
+      <div class="disablePxToRem-jishu">
+        使用技术：原生微信小程序+小程序开发文档
+      </div>
+      <div class="disablePxToRem-content">
         项目描述：该项目是一个电商小程序通过线下协商商店进行商品代理点，代理通过分销获取下级的奖
         励回扣，商品并有限时抢购与限时秒杀功能，当高并发时前端设置用户在某一时间段内只可以访问一
         次为限时，或者禁止重复提交。
@@ -91,9 +93,11 @@
       </div>
     </div>
     <div class="line">
-      <div class="title">人保有氧（莱峰物联网开发）</div>
-      <div class="jishu">原生微信小程序+小程序开发文档+vantWeapp</div>
-      <div class="content">
+      <div class="disablePxToRem-title">人保有氧（莱峰物联网开发）</div>
+      <div class="disablePxToRem-jishu">
+        原生微信小程序+小程序开发文档+vantWeapp
+      </div>
+      <div class="disablePxToRem-content">
         项目描述：该项目是一个迭代项目新功能是每日跑步步数与七日每天的步数进行同步，可以完成每日
         活力赛或者七天养成计划的时候可以领取红包，红包的领取需要分享之后才能领取。而每个活动的状
         态又分为：进行中、未开始、已结束。未开始的时候可以预约活动并通过微信小程序的订阅消息模板
@@ -156,19 +160,19 @@ export default defineComponent({
 .line {
   margin-bottom: 20px;
 }
-.title {
+.disablePxToRem-title {
   font-size: 18px;
   font-weight: bold;
   color: #fff;
   text-align: center;
   margin-bottom: 20px;
 }
-.jishu {
+.disablePxToRem-jishu {
   font-size: 16px;
   color: #fff;
   margin-bottom: 20px;
 }
-.content {
+.disablePxToRem-content {
   font-size: 16px;
   color: #fff;
   line-height: 30px;

@@ -1,12 +1,11 @@
 <template>
   <div class="wrp">
     <div class="content">
-      <div class="topTitle">
+      <div class="disablePxToRem-topTitle">
         <dv-decoration-8 class="leftTitle" />
-        <dv-decoration-11 class="titleName"
-          >个人求职信息数据可视化展示平台
+        <dv-decoration-11 class="titleName">
           <a href="./resume.pdf" download="程雍个人简历.pdf"
-            ><span></span>PDF简历下载</a
+            ><span></span>PDF简历</a
           ></dv-decoration-11
         >
         <dv-decoration-8 class="righttTitle" :reverse="true" />
@@ -100,11 +99,13 @@
                   <dv-decoration-10 style="width: 100%; height: 5px" />
                   <h2 class="titles">个人评价</h2>
                   <div class="ziwopingjia">
-                    <div class="ping">1、能够尽快熟悉业务，能快速融入团队</div>
-                    <div class="ping">
+                    <div class="disablePxToRem-ping">
+                      1、能够尽快熟悉业务，能快速融入团队
+                    </div>
+                    <div class="disablePxToRem-ping">
                       2、富有团队合作精神，做事勤勉，服从领导命令
                     </div>
-                    <div class="ping">
+                    <div class="disablePxToRem-ping">
                       3、性格外向,喜欢唱歌也会喝酒，项目的气氛活跃者
                     </div>
                   </div>
@@ -247,7 +248,8 @@ export default defineComponent({
   flex-direction: column;
   overflow-y: auto;
   overflow-x: hidden;
-  .topTitle {
+  align-items: center;
+  .disablePxToRem-topTitle {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -265,7 +267,7 @@ export default defineComponent({
       // width: 300px;
       height: 70px;
       min-width: 100px;
-      font-size: 30px;
+      font-size: 16px;
       color: #fff;
       a {
         font-size: 16px;
@@ -369,7 +371,7 @@ export default defineComponent({
       }
       .nvr {
         padding-top: 30px;
-        height: 135px;
+        // height: 135px;
         .cotnent {
           display: flex;
           justify-content: center;
@@ -458,7 +460,7 @@ export default defineComponent({
           margin-top: 30px;
         }
         .ziwopingjia {
-          .ping {
+          .disablePxToRem-ping {
             font-size: 15px;
             color: rgb(25, 206, 164);
           }
